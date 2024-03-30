@@ -1,5 +1,6 @@
 package edu.tcu.cs.hogwartsartifactsonline.wizard;
 
+import edu.tcu.cs.hogwartsartifactsonline.artifact.Artifact;
 import edu.tcu.cs.hogwartsartifactsonline.artifact.ArtifactRepository;
 import edu.tcu.cs.hogwartsartifactsonline.system.exception.ObjectNotFoundException;
 import jakarta.transaction.Transactional;
@@ -53,7 +54,6 @@ public class WizardService {
         this.wizardRepository.deleteById(wizardId);
     }
 
-    /**
     public void assignArtifact(Integer wizardId, String artifactId){
         // Find this artifact by Id from DB.
         Artifact artifactToBeAssigned = this.artifactRepository.findById(artifactId)
@@ -69,6 +69,6 @@ public class WizardService {
             artifactToBeAssigned.getOwner().removeArtifact(artifactToBeAssigned);
         }
         wizard.addArtifact(artifactToBeAssigned);
-    }*/
+    }
 
 }
