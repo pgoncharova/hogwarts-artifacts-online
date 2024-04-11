@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          property-sources[0]:
+            endpoint: ${AZURE_KEY_VAULT_ENDPOINT} # environment variable
+  datasource:
+    url: ${datasource-url} # URL of MySQL in Azure (secret from Azure Key Vault)
+    username: ${datasource-username} # admin username of MySQL (secret from Azure Key Vault)
+    password: ${datasource-password} # password of admin of MySQL (secret from Azure Key Vault)
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none # Turn off the DDL (Data Definition Language) auto generation
